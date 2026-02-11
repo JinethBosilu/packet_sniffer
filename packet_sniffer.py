@@ -26,4 +26,12 @@ def process_sniffed_packet(packet):
             
         #print(packet.show())
 
-sniff("eth0")
+def get_user_input():
+    interface = input("Enter the interface to sniff on (e.g., eth0): ")
+    if interface == "":
+        print("Please enter a valid interface.")
+        exit()
+    return interface
+
+interface = get_user_input()
+sniff(interface)
